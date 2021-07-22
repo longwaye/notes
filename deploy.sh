@@ -7,7 +7,7 @@ git init
 git add -A
 git commit -m 'notes'
  
-git push -f git@github.com:longwaye/longwaye.notes.git master:notes
+git push -f git@github.com:longwaye/notes master:notes
  
  
 cd –
