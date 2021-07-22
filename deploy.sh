@@ -5,9 +5,9 @@
  
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'notes'
  
-git push -f git@github.com:longwaye/longwaye.github.io.git master
+git push -f git@github.com:longwaye/longwaye.notes.git master:notes
  
  
 cd –
