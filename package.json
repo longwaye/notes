@@ -1,0 +1,14 @@
+{
+	"name": "vue-press",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "long",
+	"license": "MIT",
+	"devDependencies": {
+		"vuepress": "^1.8.2"
+	},
+	"scripts": {
+		"docs:dev": "vuepress dev docs --temp .temp",
+		"docs:build": "vuepress build docs"
+	}
+}
