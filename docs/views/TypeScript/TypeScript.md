@@ -1,4 +1,12 @@
-# TyprScript
+---
+title: 'TyprScript'
+date: 2021-07-23
+
+tags:
+  - 'TyprScript'
+categories:
+  - 'TyprScript'
+---
 
 ## 1.vscode 配置自动编译
 
