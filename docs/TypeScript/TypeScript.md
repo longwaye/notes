@@ -1,4 +1,4 @@
-# _TyprScript_
+# TyprScript
 
 ## 1.vscode 配置自动编译
 
@@ -908,7 +908,7 @@ var myGetData: ConfigFn<string> = getData
 myGetData('张三')
 ```
 
-### TypeScript 类型、接口、类 、泛型 综合使用
+### 6.5 TypeScript 类型、接口、类 、泛型 综合使用
 
 TypeScript 封装统一操作 Mysql Mongodb Mssql 的底层类库
 
@@ -997,7 +997,7 @@ console.log(data)
 - 我们就需要通过 export 暴露模块里面的数据
 - 然后其他地方通过 import 引入模块就可以使用模块内的数据
 
-### 模块暴露 export
+模块暴露 export：
 
 ```tsx
 //  方式一
@@ -1011,7 +1011,7 @@ function a(){
 export { a }
 ```
 
-### 模块导入 import
+模块导入 import:
 
 ```tsx
 import { a, a as alias } from 'xxx'
@@ -1019,7 +1019,7 @@ a()
 alias()
 ```
 
-### 模块默认导出 default，一个模块只能用一次
+模块默认导出 default，一个模块只能用一次
 
 暴露：
 
@@ -1029,7 +1029,7 @@ export default a(){
 }
 ```
 
-### 引入(不用花括号)
+引入(不用花括号)：
 
 ```tsx
 import a from 'aaa'
@@ -1397,4 +1397,44 @@ type ReturnType<T extends (...args: any[]) => any> = T extends (
 type Func = (value: number) => string
 
 const foo: ReturnType<Func> = '1'
+```
+
+### Pick
+
+通过从 中选取一组属性`Keys`（字符串文字或字符串文字的并集）来构造一个类型`Type`。
+
+```typescript
+interface Todo {
+	title: string
+	description: string
+	completed: boolean
+}
+
+type TodoPreview = Pick<Todo, 'title' | 'completed'>
+
+const todo: TodoPreview = {
+	title: 'Clean room',
+	completed: false,
+}
+```
+
+### `Omit<Type, Keys>`
+
+通过从中选取所有属性`Type`然后删除`Keys`（字符串文字或字符串文字的并集）来构造类型。
+
+```typescript
+interface Todo {
+	title: string
+	description: string
+	completed: boolean
+	createdAt: number
+}
+
+type TodoPreview = Omit<Todo, 'description'>
+
+const todo: TodoPreview = {
+	title: 'Clean room',
+	completed: false,
+	createdAt: 1615544252770,
+}
 ```
